@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mapa_Teste</title>
+	<meta charset="utf-8" />
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>	
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js">
+	</script>
+</head>
+<body>
+	<nav>
+     	<div class="nav-wrapper light-blue darken-3">
+         	<a href="#" class="brand-logo">Mapeamento</a>
+         	<a href="#" data-activates="menu-mobile" class="button-collapse">
+            	<i class="material-icons">menu</i>
+         	</a>
+         	<ul class="right hide-on-med-and-down">
+             	<li><a href="#">Destaques</a></li>
+             	<li><a href="#">Fórum</a></li>
+             	<li><a href="#">Leis de Acessibilidade</a></li>
+             	<li><a href="#">Sobre</a></li>
+         	</ul>
+         	<ul class="side-nav" id="menu-mobile">
+             	<li><a href="#">Destaques</a></li>
+             	<li><a href="#">Fórum</a></li>
+             	<li><a href="#">Leis de Acessibilidade</a></li>
+             	<li><a href="#">Sobre</a></li>
+         	</ul>
+     	</div>
+ 	</nav>
+	<div id="map" style="width: 100%; height: 590px;border: solid black 3px;">
+
+	<script>
+		$(function(){
+		  $(".button-collapse").sideNav();
+		});
+
+	var map = L.map('map').setView([-22.9013682,-47.0572797], 16,3);
+
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	function onLocationFound(e) {
+		var radius = e.accuracy / 2;
+
+	L.marker(e.latlng).addTo(map)
+			.bindPopup("Você está a " + radius + " Metros desse marcador").openPopup();
+
+	}
+
+	function onLocationError(e) {
+		alert(e.message);
+	}
+
+	map.on('locationfound', onLocationFound);
+	map.on('locationerror', onLocationError);
+
+	map.locate({setView: true, maxZoom: 17});
+
+	var lugarIcon = L.icon({
+			iconUrl: 'imagens/comida.svg',
+			iconSize: 		[30, 30],
+			iconAnchor: 	[15, 20],
+			popupAnchor: 	[-3, -20],  
+		});
+		L.marker([-22.9055452,-47.0591172],{icon: lugarIcon}).bindPopup("<b>Mc Donald's - Glicério</b><br><hr align='center' size='2px' width='100%' color='black'><br><img src='imagens/cadeira_rodas.jfif' height='30px' width = '30px'><b><p>Não há acessibilidade à deficientes motores.</b></p><br><img src='imagens/cego.jpg' height='35px' width = '35px'><b><p>Não há informações sobre deficientes visuais</p></b><br><img src='imagens/surdo.png' height='35px' width = '35px'><b><p>É acessível à deficientes auditivos</p></b>").addTo(map);
+	
+
+
+	</script>
+
+</body>
+</html>
