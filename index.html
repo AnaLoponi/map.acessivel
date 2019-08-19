@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mapa_Teste</title>
+	<title>Mapa</title>
 	<meta charset="utf-8" />
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"/>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>	
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js">
-	</script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-	<nav>
-     	<div class="nav-wrapper light-blue darken-3">
-         	<a href="#" class="brand-logo">Mapeamento</a>
-         	<a href="#" data-activates="menu-mobile" class="button-collapse">
-            	<i class="material-icons">menu</i>
-         	</a>
-         	<ul class="right hide-on-med-and-down">
-             	<li><a href="#">Destaques</a></li>
-             	<li><a href="#">Fórum</a></li>
-             	<li><a href="#">Leis de Acessibilidade</a></li>
-             	<li><a href="#">Sobre</a></li>
-         	</ul>
-         	<ul class="side-nav" id="menu-mobile">
-             	<li><a href="#">Destaques</a></li>
-             	<li><a href="#">Fórum</a></li>
-             	<li><a href="#">Leis de Acessibilidade</a></li>
-             	<li><a href="#">Sobre</a></li>
-         	</ul>
-     	</div>
- 	</nav>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0277bd">
+  		<a class="navbar-brand" href="index.html">Mapa</a>
+  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
+
+  		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      			<li class="nav-item"><a class="nav-link" href="destaques.html">Destaques</a></li>
+      			<li class="nav-item"><a class="nav-link" href="forum.html">Fórum</a></li>
+      		  	<li class="nav-item"><a class="nav-link" href="leis.html">Leis de Acessibilidade</a></li>	
+      			<li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+    		</ul>
+    		<form class="form-inline my-2 my-lg-0">
+      			<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
+      			<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+    		</form>
+  		</div>
+	</nav>
 	<div id="map" style="width: 100%; height: 590px;border: solid black 3px;">
 
 	<script>
-		$(function(){
-		  $(".button-collapse").sideNav();
-		});
-
+		
 	var map = L.map('map').setView([-22.9013682,-47.0572797], 16,3);
 
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -69,7 +68,11 @@
 			iconAnchor: 	[15, 20],
 			popupAnchor: 	[-3, -20],  
 		});
-		L.marker([-22.9055452,-47.0591172],{icon: lugarIcon}).bindPopup("<b>Mc Donald's - Glicério</b><br><hr align='center' size='2px' width='100%' color='black'><br><img src='imagens/cadeira_rodas.jfif' height='30px' width = '30px'><b><p>Não há acessibilidade à deficientes motores.</b></p><br><img src='imagens/cego.jpg' height='35px' width = '35px'><b><p>Não há informações sobre deficientes visuais</p></b><br><img src='imagens/surdo.png' height='35px' width = '35px'><b><p>É acessível à deficientes auditivos</p></b>").addTo(map);
+	var questionario = "<b>Mc Donald's - Glicério</b><br><hr align='center' size='2px' width='100%' color='black'><img src='imagens/cadeira_rodas.jfif' height='30px' width = '30px'><b><p>Não há acessibilidade à deficientes motores.</b></p><br><img src='imagens/cego.jpg' height='35px' width = '35px'><b><p>Não há informações sobre deficientes visuais</p></b><br><img src='imagens/surdo.png' height='35px' width = '35px'><b><p>É acessível à deficientes auditivos</p></b><a href='questionario.html'><br><button type='button' class='btn btn-primary'>Responder o Questionário</button></a>";
+
+		L.marker([-22.9055452,-47.0591172],{icon: lugarIcon}).bindPopup(questionario).addTo(map);
+
+		
 	
 
 
