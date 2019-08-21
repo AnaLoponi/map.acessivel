@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Questionário</title>
+	<title>Cadastro de Estabelecimentos</title>
 	<meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -15,7 +15,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0277bd">
-  		<a class="navbar-brand" href="questionario.html">Questionário</a>
+  		<a class="navbar-brand" href="index.html">Cadastrar Estabelecimento</a>
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
     		<span class="navbar-toggler-icon"></span>
   		</button>
@@ -34,5 +34,21 @@
     		</form>
   		</div>
 	</nav>
+    <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome do Estabelecimento</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome">
+      <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Senha</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+    </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
 </body>
 </html>
