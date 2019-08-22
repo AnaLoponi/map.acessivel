@@ -34,21 +34,52 @@
     		</form>
   		</div>
 	</nav>
+  <div class="jumbotron">
+  <h1 class="display-4">Bem-Vindo!</h1>
+  <p class="lead">Esta é uma simples página para cadastrar os estabelecimentos aqui da cidade de Campinas.</p>
+  <hr class="my-4">
+  <p>Cadastre um Estabelecimento e nos ajude a crescer!</p>
     <form>
     <div class="form-group">
-      <label for="exampleInputEmail1">Nome do Estabelecimento</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome">
-      <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+      <label for="exampleName1">Nome do Estabelecimento</label>
+      <input type="text" class="form-control" id="exampleName1" aria-describedby="NamelHelp" placeholder="Nome">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Senha</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+      <label for="exampleEndereco1">Endereço</label>
+      <small id="EnderecoHelp" class="form-text text-muted">Rua: </small>
+      <input type="text" class="form-control" id="exampleEndereco1" placeholder="Logradouro">
+      <small id="EnderecoHelp" class="form-text text-muted">Bairro: </small>
+      <input type="text" class="form-control" id="exampleEndereco1" placeholder="Bairro">
+      <small id="EnderecoHelp" class="form-text text-muted">Número: </small>
+      <input type="number" class="form-control" id="exampleEndereco1" placeholder="Número">
     </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+    <div class="form-group">
+      <label for="exampleTel1">Contato</label>
+      <small id="TelHelp" class="form-text text-muted">Telefone: </small>
+      <input type="text" class="form-control" id="exampleTel1" aria-describedby="TelHelp" placeholder="Telefone Fixo">
+      <small id="CelHelp" class="form-text text-muted">Celular: </small>
+      <input type="text" class="form-control" id="exampleTel1" aria-describedby="CelHelp" placeholder="Celular">
+      <small id="SiteHelp" class="form-text text-muted">Site: </small>
+      <input type="text" class="form-control" id="exampleTel1" aria-describedby="SiteHelp" placeholder="Site">
     </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="form-group">
+      <label for="exampleFunc1">Funcionamento</label>
+      <small id="HoraHelp" class="form-text text-muted">Horário: </small>
+      <input type="text" class="form-control" id="exampleFunc1" aria-describedby="HoraHelp" placeholder="Horário de Funcionamento">
+      <small id="DiasHelp" class="form-text text-muted">Dias: </small>
+      <select class="custom-select" id="inputGroupSelect01" type="text" class="form-control" id="exampleFunc1" aria-describedby="DiasHelp">
+        <option value="1">Todos os Dias</option>
+        <option value="2">Segunda à Sexta</option>
+        <option value="3">Segunda</option>
+        <option value="3">Terça</option>
+        <option value="3">Quarta</option>
+        <option value="3">Quinta</option>
+        <option value="3">Sexta</option>
+        <option value="3">Sábado</option>
+        <option value="3">Domingo</option>
+      </select>
+    </div>
     </form>
+  </div>
 </body>
 </html>
