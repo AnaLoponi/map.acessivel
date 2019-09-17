@@ -88,17 +88,14 @@
 
 	var popup = L.popup();
 
-	function onMapClick(e) {
-		popup
-			.setLatLng(e.latlng)
-			.setContent("Para Cadastar um Estabelecimento <br><a href='cadastro_est.html'><button type='button' class='btn btn-primary'>Clique Aqui</button></a>")
-			.openOn(map);
-	}
-
-	map.on('click', onMapClick);
-
+	map.on('contextmenu',(e) => {
+  		L.popup()
+  		.setLatLng(e.latlng) 
+  		.setContent("Para Cadastar um Estabelecimento <br><a href='cadastro_est.html'><button type='button' class='btn btn-primary'>Clique Aqui</button></a>")
+  		.openOn(map);
+	});
 
 	</script>
-
+	<p class="mt-5 mb-3 text-muted">&copy; Ana Clara, João Vitor, Luiz Roberto</p>
 </body>
 </html>
