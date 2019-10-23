@@ -105,7 +105,7 @@
 	map.on('contextmenu',(e) => {
   		L.popup()
   		.setLatLng(e.latlng) 
-  		.setContent("Para Cadastar um Estabelecimento <br><button type='button' class='btn btn-primary' onclick='cria()'>Clique Aqui</button>")
+  		.setContent("Para Cadastar um Estabelecimento <a href='cadastro_est.html'><br><button type='button' class='btn btn-primary' '>Clique Aqui</button></a>")
   		.openOn(map);
 	});
 
