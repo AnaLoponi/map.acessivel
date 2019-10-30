@@ -14,6 +14,20 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
+
+       <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-storage.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+        <script type="text/javascript" src="envMap.js"></script>
+        <script type="text/javascript" src="armazenamento.js"></script>
+
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0277bd">
   		<a class="navbar-brand" href="index.html">Cadastrar Estabelecimento</a>
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Alterna navegação">
@@ -34,6 +48,7 @@
     		</form>!-->
   		</div>
 	</nav>
+  
   <div class="jumbotron">
   <h1 class="display-4">Bem-Vindo!</h1>
   <p class="lead">Aqui você pode pode cadastrar os estabelecimentos da cidade de Campinas.</p>
@@ -42,38 +57,38 @@
     <form>
     <div class="form-group">
       <label for="exampleName1">Nome do Estabelecimento</label>
-      <input type="text" class="form-control" id="exampleName1" aria-describedby="NamelHelp" placeholder="Nome">
+      <input type="text" class="form-control" id="nome" name="nome" aria-describedby="NamelHelp" placeholder="Nome">
     </div>
     <div class="form-group">
       <label for="exampleEndereco1">Endereço</label>
       <small id="EnderecoHelp" class="form-text text-muted">Rua: </small>
-      <input type="text" class="form-control" id="exampleEndereco1" placeholder="Logradouro">
+      <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="Logradouro">
       <small id="EnderecoHelp" class="form-text text-muted">Bairro: </small>
-      <input type="text" class="form-control" id="exampleEndereco1" placeholder="Bairro">
+      <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro">
       <small id="EnderecoHelp" class="form-text text-muted">Número: </small>
-      <input type="number" class="form-control" id="exampleEndereco1" placeholder="Número">
+      <input type="number" class="form-control" id="numero" name="numero" placeholder="Número">
     </div>
     <div class="form-group">
       <label for="exampleTel1">Contato</label>
       <small id="TelHelp" class="form-text text-muted">Telefone: </small>
-      <input type="text" class="form-control" id="exampleTel1" aria-describedby="TelHelp" placeholder="Telefone Fixo">
+      <input type="text" class="form-control" id="telefone" name="telefone" aria-describedby="TelHelp" placeholder="Telefone Fixo">
       <small id="CelHelp" class="form-text text-muted">Celular: </small>
-      <input type="text" class="form-control" id="exampleTel1" aria-describedby="CelHelp" placeholder="Celular">
+      <input type="text" class="form-control" id="celular" name="celular" aria-describedby="CelHelp" placeholder="Celular">
       <small id="SiteHelp" class="form-text text-muted">Site: </small>
-      <input type="text" class="form-control" id="exampleTel1" aria-describedby="SiteHelp" placeholder="Site">
+      <input type="text" class="form-control" id="site" name="site" aria-describedby="SiteHelp" placeholder="Site">
     </div>
     <div class="form-group">
       <label for="exampleFunc1">Funcionamento</label>
       <small id="HoraHelp" class="form-text text-muted">Horário: </small>
-      <input type="text" class="form-control" id="exampleFunc1" aria-describedby="HoraHelp" placeholder="Horário de Funcionamento">
+      <input type="text" class="form-control" id="funcionamento" name="funcionamento" aria-describedby="HoraHelp" placeholder="Horário de Funcionamento">
       <small id="DiasHelp" class="form-text text-muted">Dias: </small>
-      <select class="custom-select" id="inputGroupSelect01" type="text" class="form-control" id="exampleFunc1" aria-describedby="DiasHelp">
-        <option value="1">Todos os Dias</option>
-        <option value="2">Segunda à Sexta</option>
-        <option value="3">Terça à Domingo</option>
-        <option value="4">Finais de Semana</option>
+      <select class="custom-select" id="dias" type="text" class="form-control" aria-describedby="DiasHelp">
+        <option value="todos os dias">Todos os Dias</option>
+        <option value="segunda à sexta">Segunda à Sexta</option>
+        <option value="terça à sexta">Terça à Domingo</option>
+        <option value="finais de semana">Finais de Semana</option>
       </select>
-      <a href="index.html"><button type="button" class="btn btn-primary">Enviar</button></a>
+      <button type="button" class="btn btn-primary" onclick="armazena_est();">Enviar</button></a>
     </div>
     </form> 
   </div>
